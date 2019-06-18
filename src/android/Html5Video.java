@@ -140,7 +140,7 @@ public class Html5Video extends CordovaPlugin {
 				in = new BufferedInputStream(fd.createInputStream()); // this is auto-close!
 				// well we need world readable because that's the only way chrome can read it!
 				// don't worry about their scare-tactic "oooh security holes" warnings: who cares if other apps can read your videos?
-				out = new BufferedOutputStream(activity.openFileOutput(newFileName, Context.MODE_WORLD_READABLE));
+				out = new BufferedOutputStream(activity.openFileOutput(newFileName, Context.MODE_PRIVATE));
 				
 				// copy the file over. it's 2014, we still have to do this by hand?
 				byte buffer[] = new byte[8192];
